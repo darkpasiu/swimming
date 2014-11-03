@@ -8,17 +8,17 @@ using namespace std;
 void CPerson::setName(string a_szName)
 {
 	m_szName = a_szName;
-}
+};
 
 void CPerson::setSurname(string a_szSurname)
 {
 	m_szSurname = a_szSurname;
-}
+};
 
 void CPerson::setYear(unsigned int a_uiYear)
 {
         m_uiYear = a_uiYear;
-}
+};
 
 /* GET */
 
