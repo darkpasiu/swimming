@@ -12,14 +12,18 @@ class CPerson {
 	string m_szName;
 	string m_szSurname;
 	unsigned int m_uiYear;
+	unsigned int m_uiPersonID;
+
+	static unsigned int m_suiID;
 
  	public:
 	/* CONSTRUCTOR */
 	CPerson(string a_szName, string a_szSurname, unsigned int a_uiYear)
 	{
-		m_szName    = a_szName,
-		m_szSurname = a_szSurname,
-		m_uiYear    = a_uiYear;
+		m_uiPersonID = m_suiID++;
+		m_szName     = a_szName,
+		m_szSurname  = a_szSurname,
+		m_uiYear     = a_uiYear;
 	};
 
 	/* SET */

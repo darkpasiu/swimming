@@ -3,6 +3,8 @@
 
 using namespace std;
 
+unsigned int CPerson::m_suiID = 0;
+
 /* SET */
 
 void CPerson::setName(string a_szName)
