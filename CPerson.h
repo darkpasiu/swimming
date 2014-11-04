@@ -23,15 +23,7 @@ class CPerson {
 	void printPersonInfo();
 
 	/* CONSTRUCTOR */
-	CPerson(string a_szName, string a_szSurname, unsigned int a_uiYear, bool a_bGender=MAN, string a_szClub="")
-	{
-		m_uiPersonID = m_suiID++;
-		m_szName     = a_szName,
-		m_szSurname  = a_szSurname,
-		m_uiYear     = a_uiYear,
-		m_bGender    = a_bGender,
-		m_szClub     = a_szClub;
-	};
+	CPerson(string, string, unsigned int, bool, string);
 
 	/* SET */
 	void setName(string);
