@@ -3,25 +3,35 @@
 #define TORUNAMENT
 
 #include <list>
-#include "CPerson.h"
-#include "CCompetition.h"
 
 using namespace std;
+
+// forward declaration
+class CPerson;
+class CCompetition;
 
 // singleton
 class CTournament
 {
 	
 	private:
-	list<CPerson *> m_listPerson;
-	list<CCompetition *> m_listCompetition;
+	list<CPerson *> m_RegisteredPersonList;
+	list<CCompetition *> m_RegisteredCompetitionList;
 
 	static CTournament *instance;
+
+	/* CONSTRUCTOR */
 	CTournament() {};
 
 	public:
 	static CTournament *getInstance();
+
+	void registerPerson(CPerson *);
+	void registerCompetition(CCompetition *);
+
+	/* DESTRUCTOR */
 	~CTournament() {};
+
 };
 
 #endif

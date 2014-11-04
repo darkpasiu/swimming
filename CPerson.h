@@ -6,6 +6,8 @@
 #include "define.h"
 
 using namespace std;
+class CTournament;
+
 
 class CPerson {
 	
@@ -17,6 +19,8 @@ class CPerson {
 	unsigned int m_uiYear;
 	unsigned int m_uiPersonID;
 
+	CTournament * p_CTournamentInstance;
+	
 	static unsigned int m_suiID;
 
  	public:

@@ -1,5 +1,6 @@
-// person.cpp
+// CPerson.cpp
 #include "CPerson.h"
+#include "CTournament.h"
 
 using namespace std;
 
@@ -20,6 +21,10 @@ CPerson::CPerson(string a_szName, string a_szSurname, unsigned int a_uiYear, boo
 	m_uiYear     = a_uiYear,
 	m_bGender    = a_bGender,
 	m_szClub     = a_szClub;
+
+	p_CTournamentInstance = CTournament::getInstance();
+	p_CTournamentInstance->registerPerson(this);
+
 };
 
 /***** SET *****/
