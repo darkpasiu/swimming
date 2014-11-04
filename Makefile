@@ -14,7 +14,7 @@ OBJS = $(patsubst %.cpp,%.o,$(SRCS))
 EXE = bin
 
 
-all: $(EXE)
+all: clean $(EXE)
 
 %.o: %.cpp
 	$(CC) -c $(CFLAGS) $(DEBUGFLAG) $< -o $@
