@@ -11,6 +11,8 @@ int main(){
 
 	CCompetition zawody1("50m stylem dowolnym", 0);
 	CCompetition zawody2("50m stylem klasycznym", 0);
+	CCompetition zawody3("100m stylem klasycznym", 0);
+	CCompetition zawody4("100m stylem dowolnym", 0);
 	
 	CPerson plywak1("Jan", "Kowalski", 1988, 1, "UKL Osemka");
 	CPerson plywak2("Jacek", "Walski", 1989, 1, "Wodnik Police");
@@ -21,6 +23,8 @@ int main(){
 	plywak1.addApplication(&karta1);
 	CApplication karta2("0:36,36",2,4, &zawody2);
 	plywak1.addApplication(&karta2);
+	CApplication karta3("1:22,36",4,2, &zawody3);
+	plywak1.addApplication(&karta3);
 
 	plywak1.printPersonInfo();
 	plywak2.printPersonInfo();

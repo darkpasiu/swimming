@@ -31,7 +31,7 @@ class CPerson {
 	void addApplication(CApplication *);
 
 	/* CONSTRUCTOR */
-	CPerson(string, string, unsigned int, bool, string);
+	CPerson(string, string, unsigned int, bool, string = "");
 
 	/* SET */
 	void setName(string);

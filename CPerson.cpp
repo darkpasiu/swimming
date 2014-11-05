@@ -33,12 +33,14 @@ void CPerson::printPersonInfo()
 void CPerson::addApplication(CApplication * a_pCApplication)
 {
 	m_PersonApplicationVector.push_back(a_pCApplication);
+	//TODO sprawdzic czy ktos nie probuje dwa razy dodac tej samej karty
+	//TODO sprawdzic czy zawodnik nie startuje dwa razy w tej samej konkurencji, moze zostal juz dodany wczesniej?
 }
 
 
 /***** CONSTRUCTOR *****/
 
-CPerson::CPerson(string a_szName, string a_szSurname, unsigned int a_uiYear, bool a_bGender=MAN, string a_szClub="")
+CPerson::CPerson(string a_szName, string a_szSurname, unsigned int a_uiYear, bool a_bGender=MAN, string a_szClub)
 {
 	m_uiPersonID = m_suiID++;
 	m_szName     = a_szName,

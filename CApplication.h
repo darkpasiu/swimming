@@ -16,13 +16,14 @@ class CApplication {
 	unsigned int m_uiCompetitionID;
 	unsigned int m_uiTrack;
 	unsigned int m_uiSeries;
+	bool m_bIsCurrentlyUsed;
 	CCompetition * m_pCCompetition;
 
  	public:
 	void printApplicationInfo();
 
 	/* CONSTRUCTOR */
-	CApplication(string, unsigned int, unsigned int, CCompetition *);
+	CApplication(string a_szApplicationResult, unsigned int = 0, unsigned int = 0, CCompetition * = 0, bool = 0);
 
 	/* SET */
 	void setApplicationResult(string);

@@ -6,7 +6,7 @@ using namespace std;
 
 void CApplication::printApplicationInfo()
 {
-	cout <<  "[CApplication]: " << m_szApplicationResult << " s:" << m_uiSeries << "t:" << m_uiTrack;
+	cout <<  "[CApplication]: " << m_szApplicationResult << " s:" << m_uiSeries << " t:" << m_uiTrack;
 
 	if (m_pCCompetition)
 	{
@@ -22,12 +22,13 @@ void CApplication::printApplicationInfo()
 
 /***** CONSTRUCTOR *****/
 
-CApplication::CApplication(string a_szApplicationResult, unsigned int a_uiTrack = 0, unsigned int a_uiSeries = 0, CCompetition * a_pCCompetition = 0)
+CApplication::CApplication(string a_szApplicationResult, unsigned int a_uiTrack, unsigned int a_uiSeries, CCompetition * a_pCCompetition, bool a_bIsCurrentlyUsed)
 {
 	m_szApplicationResult = a_szApplicationResult;
 	m_uiTrack             = a_uiTrack;
 	m_uiSeries            = a_uiSeries;
 	m_pCCompetition       = a_pCCompetition;
+	m_bIsCurrentlyUsed    = a_bIsCurrentlyUsed;
 }
 
 /***** SET *****/
