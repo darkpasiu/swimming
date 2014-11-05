@@ -16,6 +16,7 @@ class CApplication {
 	unsigned int m_uiCompetitionID;
 	unsigned int m_uiTrack;
 	unsigned int m_uiSeries;
+	/* 1 application is used, 0 application is not used */
 	bool m_bIsCurrentlyUsed;
 	CCompetition * m_pCCompetition;
 
@@ -31,6 +32,8 @@ class CApplication {
 	void setTrack(unsigned int);
 	void setSeries(unsigned int);
 	void setCompetition(CCompetition *);
+	void setAsUsed();
+	void setAsUnUsed();
 
 	/* GET */
 	string & getApplicationResult();
@@ -38,6 +41,7 @@ class CApplication {
 	unsigned int & getTrack();
 	unsigned int & getSeries();
 	CCompetition * getCompetition();
+	bool & getIsCurrentlyUsed();
 };
 
 

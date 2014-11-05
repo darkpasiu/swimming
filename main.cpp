@@ -10,7 +10,7 @@ using namespace std;
 int main(){
 
 	CCompetition zawody1("50m stylem dowolnym", 0);
-	CCompetition zawody2("50m stylem klasycznym", 0);
+	CCompetition zawody2("50m stylem klasycznym", 1);
 	CCompetition zawody3("100m stylem klasycznym", 0);
 	CCompetition zawody4("100m stylem dowolnym", 0);
 	
@@ -26,11 +26,13 @@ int main(){
 	CApplication karta3("1:22,36",4,2, &zawody3);
 	plywak1.addApplication(&karta3);
 
+	karta1.printApplicationInfo();
+
+	cout << "\n**********\n";
 	plywak1.printPersonInfo();
 	plywak2.printPersonInfo();
 	plywak3.printPersonInfo();
-
-	karta1.printApplicationInfo();
+	cout << "**********\n\n";
 
 	zawody1.printCompetitionInfo();
 	zawody2.printCompetitionInfo();

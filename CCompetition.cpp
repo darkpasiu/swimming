@@ -7,7 +7,8 @@ using namespace std;
 
 void CCompetition::printCompetitionInfo()
 {
-	cout << "[CCompetition]: " <<m_szCompetition << " " << m_bGender << endl;
+	cout << "[CCompetition]: " << m_szCompetition << " ";
+	(m_bGender) ? (cout << ksMen << endl) : ( cout << ksWomen << endl );
 }
 
 /***** CONSTRUCTOR *****/

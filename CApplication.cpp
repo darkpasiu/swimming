@@ -58,6 +58,17 @@ void CApplication::setCompetition(CCompetition * a_pCCompetition)
 	m_pCCompetition = a_pCCompetition;
 }
 
+void CApplication::setAsUsed()
+{
+	m_bIsCurrentlyUsed = 1;
+}
+
+void CApplication::setAsUnUsed()
+{
+	m_bIsCurrentlyUsed = 0;
+}
+
+
 /***** GET *****/
 
 string & CApplication::getApplicationResult()
@@ -83,4 +94,9 @@ unsigned int & CApplication::getSeries()
 CCompetition * CApplication::getCompetition()
 {
 	return m_pCCompetition;
+}
+
+bool & CApplication::getIsCurrentlyUsed()
+{
+	return m_bIsCurrentlyUsed;
 }
