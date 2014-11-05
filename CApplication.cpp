@@ -5,16 +5,15 @@ using namespace std;
 
 void CApplication::printApplicationInfo()
 {
-	cout << "[" << m_uiPersonID << "] " << m_szApplicationResult << " " << m_uiTrack << " " << m_uiSeries;
+	cout << m_szApplicationResult << " " << m_uiTrack << " " << m_uiSeries;
 }
 
 
 /***** CONSTRUCTOR *****/
 
-CApplication::CApplication(string a_szApplicationResult, unsigned int a_uiPersonID, unsigned int a_uiTrack=0, unsigned int a_uiSeries=0)
+CApplication::CApplication(string a_szApplicationResult, unsigned int a_uiTrack=0, unsigned int a_uiSeries=0)
 {
 	m_szApplicationResult = a_szApplicationResult;
-	m_uiPersonID          = a_uiPersonID;
 	m_uiTrack             = a_uiTrack;
 	m_uiSeries            = a_uiSeries;
 }
@@ -51,11 +50,6 @@ string & CApplication::getApplicationResult()
 string & CApplication::getFinalResult()
 {
 	return m_szFinalResult;
-}
-
-unsigned int & CApplication::getPersonID()
-{
-	return m_uiPersonID;
 }
 
 unsigned int & CApplication::getTrack()

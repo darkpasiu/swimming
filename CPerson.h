@@ -3,11 +3,12 @@
 #define PERSON
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 class CTournament;
-
+class CApplication;
 
 class CPerson {
 	
@@ -18,6 +19,8 @@ class CPerson {
 	bool m_bGender;
 	unsigned int m_uiYear;
 	unsigned int m_uiPersonID;
+
+	vector<CApplication *> m_PersonApplicationVector;
 
 	CTournament * p_CTournamentInstance;
 	

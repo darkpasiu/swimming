@@ -42,6 +42,14 @@ void CTournament::printRegisteredPersons()
 
 void CTournament::printRegisteredCompetitions()
 {
+        cout << "\n[CTournament]: printRegisteredCompetitions()" << endl;
+
+        std::list<CCompetition *>::iterator it;
+
+        for (it = m_RegisteredCompetitionList.begin(); it != m_RegisteredCompetitionList.end(); ++it)
+        {
+                cout << (*it)->getName() << " " << (*it)->getGender() << endl;
+        }
 
 }
 
