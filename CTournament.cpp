@@ -28,3 +28,20 @@ void CTournament::registerCompetition(CCompetition * a_pCCompetition)
 	cout << "[CTournament]: new Competition registered: " << a_pCCompetition->getName() << endl;
 }
 
+void CTournament::printRegisteredPersons()
+{
+	cout << "\n[CTournament]: printRegisteredPersons()" << endl;
+	
+	std::list<CPerson *>::iterator it;
+
+	for (it = m_RegisteredPersonList.begin(); it != m_RegisteredPersonList.end(); ++it)
+	{
+		cout << (*it)->getName() << " " << (*it)->getSurname()  << " " << (*it)->getClub() << " " << (*it)->getGender() << " " << (*it)->getYear() << endl;
+	}
+}
+
+void CTournament::printRegisteredCompetitions()
+{
+
+}
+

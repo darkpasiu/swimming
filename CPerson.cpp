@@ -1,6 +1,7 @@
 // CPerson.cpp
 #include "CPerson.h"
 #include "CTournament.h"
+#include "define.h"
 
 using namespace std;
 
@@ -74,4 +75,9 @@ unsigned int & CPerson::getYear()
 string & CPerson::getClub()
 {
 	return m_szClub;
+}
+
+bool & CPerson::getGender()
+{
+	return m_bGender;
 }

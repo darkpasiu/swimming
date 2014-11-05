@@ -1,5 +1,7 @@
 // CCompetition.h 
 #include "CCompetition.h"
+#include "define.h"
+#include "CTournament.h"
 
 using namespace std;
 
@@ -10,10 +12,13 @@ void CCompetition::printCompetitionInfo()
 
 /***** CONSTRUCTOR *****/
 
-CCompetition::CCompetition(string a_szCompetition, bool a_bGender )
+CCompetition::CCompetition(string a_szCompetition, bool a_bGender=MAN)
 {
 	m_szCompetition = a_szCompetition;
 	m_bGender       = a_bGender;
+
+        p_CTournamentInstance = CTournament::getInstance();
+        p_CTournamentInstance->registerCompetition(this);
 };
 
 /***** SET *****/

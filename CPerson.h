@@ -3,9 +3,9 @@
 #define PERSON
 
 #include <iostream>
-#include "define.h"
 
 using namespace std;
+
 class CTournament;
 
 

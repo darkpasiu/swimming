@@ -7,11 +7,15 @@
 
 using namespace std;
 
+class CTournament;
+
 class CCompetition {
 	
 	private:
 	string m_szCompetition; 
 	bool m_bGender;
+
+	CTournament * p_CTournamentInstance;
 
  	public:
 	void printCompetitionInfo();

@@ -29,6 +29,9 @@ class CTournament
 	void registerPerson(CPerson *);
 	void registerCompetition(CCompetition *);
 
+	void printRegisteredPersons();
+	void printRegisteredCompetitions();
+
 	/* DESTRUCTOR */
 	~CTournament() {};
 
