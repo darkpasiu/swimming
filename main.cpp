@@ -18,6 +18,9 @@ int main(){
 	
 
 	CApplication karta1("0:57,86",1,3, &zawody1);
+	plywak1.addApplication(&karta1);
+	CApplication karta2("0:36,36",2,4, &zawody2);
+	plywak1.addApplication(&karta2);
 
 	plywak1.printPersonInfo();
 	plywak2.printPersonInfo();

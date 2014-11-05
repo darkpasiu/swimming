@@ -10,7 +10,24 @@ unsigned int CPerson::m_suiID = 0;
 
 void CPerson::printPersonInfo()
 {
-	cout << "[CPerson]: " << "[" << m_uiPersonID << "]" << " " << m_szName << " " << m_szSurname << " " << m_szClub << " " << m_bGender << " " << m_uiYear << endl; 
+	cout << "[CPerson]: " << "[" << m_uiPersonID << "]" << " " << m_szName << " " << m_szSurname << " " << m_szClub << " " << m_bGender << " " << m_uiYear ; 
+
+	int iVecSize = m_PersonApplicationVector.size();
+
+	if( iVecSize > 0 )
+	{
+		cout << "" << endl;
+		for (int i = 0; i < iVecSize; i++)
+		{
+			m_PersonApplicationVector[i]->printApplicationInfo();
+		}
+		cout << "\n";
+	}
+	else
+	{
+		cout << " application card is empty" << endl;
+	}
+
 }
 
 void CPerson::addApplication(CApplication * a_pCApplication)
