@@ -28,6 +28,7 @@ class CPerson {
 
  	public:
 	void printPersonInfo();
+	void addApplication(CApplication *);
 
 	/* CONSTRUCTOR */
 	CPerson(string, string, unsigned int, bool, string);

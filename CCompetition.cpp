@@ -7,7 +7,7 @@ using namespace std;
 
 void CCompetition::printCompetitionInfo()
 {
-	cout << m_szCompetition << " " << m_bGender << endl;
+	cout << "[CCompetition]: " <<m_szCompetition << " " << m_bGender << endl;
 }
 
 /***** CONSTRUCTOR *****/
@@ -19,6 +19,7 @@ CCompetition::CCompetition(string a_szCompetition, bool a_bGender=MAN)
 
         p_CTournamentInstance = CTournament::getInstance();
         p_CTournamentInstance->registerCompetition(this);
+
 };
 
 /***** SET *****/

@@ -6,6 +6,8 @@
 
 using namespace std;
 
+class CCompetition;
+
 class CApplication {
 	
 	private:
@@ -14,24 +16,27 @@ class CApplication {
 	unsigned int m_uiCompetitionID;
 	unsigned int m_uiTrack;
 	unsigned int m_uiSeries;
+	CCompetition * m_pCCompetition;
 
  	public:
 	void printApplicationInfo();
 
 	/* CONSTRUCTOR */
-	CApplication(string, unsigned int, unsigned int);
+	CApplication(string, unsigned int, unsigned int, CCompetition *);
 
 	/* SET */
 	void setApplicationResult(string);
 	void setFinalResult(string);
 	void setTrack(unsigned int);
 	void setSeries(unsigned int);
+	void setCompetition(CCompetition *);
 
 	/* GET */
 	string & getApplicationResult();
 	string & getFinalResult();
 	unsigned int & getTrack();
 	unsigned int & getSeries();
+	CCompetition * getCompetition();
 };
 
 

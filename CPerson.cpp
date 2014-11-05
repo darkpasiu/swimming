@@ -1,6 +1,7 @@
 // CPerson.cpp
 #include "CPerson.h"
 #include "CTournament.h"
+#include "CApplication.h"
 #include "define.h"
 
 using namespace std;
@@ -9,8 +10,14 @@ unsigned int CPerson::m_suiID = 0;
 
 void CPerson::printPersonInfo()
 {
-	cout << "[" << m_uiPersonID << "]" << " " << m_szName << " " << m_szSurname << " " << m_szClub << " " << m_bGender << " " << m_uiYear << endl; 
+	cout << "[CPerson]: " << "[" << m_uiPersonID << "]" << " " << m_szName << " " << m_szSurname << " " << m_szClub << " " << m_bGender << " " << m_uiYear << endl; 
 }
+
+void CPerson::addApplication(CApplication * a_pCApplication)
+{
+	m_PersonApplicationVector.push_back(a_pCApplication);
+}
+
 
 /***** CONSTRUCTOR *****/
 
