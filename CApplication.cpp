@@ -6,7 +6,7 @@ using namespace std;
 
 void CApplication::printApplicationInfo()
 {
-	cout <<  "[CApplication]: " << m_szApplicationResult << " s:" << m_uiSeries << " t:" << m_uiTrack;
+	cout <<  "[CApplication]: " << m_szApplicationResult << " s:" << m_uiSeries << " t:" << m_uiTrack << " active:" << getIsCurrentlyUsed();
 
 	if (m_pCCompetition)
 	{

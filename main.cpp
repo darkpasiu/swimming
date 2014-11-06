@@ -25,6 +25,7 @@ int main(){
 	plywak1.addApplication(&karta2);
 	CApplication karta3("1:22,36",4,2, &zawody3);
 	plywak1.addApplication(&karta3);
+	plywak1.addApplication(&karta3);
 
 	karta1.printApplicationInfo();
 
@@ -33,6 +34,9 @@ int main(){
 	plywak2.printPersonInfo();
 	plywak3.printPersonInfo();
 	cout << "**********\n\n";
+
+	plywak1.removeApplication(&karta3);
+	plywak1.printPersonInfo();
 
 	zawody1.printCompetitionInfo();
 	zawody2.printCompetitionInfo();

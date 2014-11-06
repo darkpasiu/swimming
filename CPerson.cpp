@@ -30,13 +30,47 @@ void CPerson::printPersonInfo()
 
 }
 
-void CPerson::addApplication(CApplication * a_pCApplication)
+bool CPerson::addApplication(CApplication * a_pCApplication)
 {
-	m_PersonApplicationVector.push_back(a_pCApplication);
-	//TODO sprawdzic czy ktos nie probuje dwa razy dodac tej samej karty
+	/* check if application is not already in use */
+	if ( a_pCApplication->getIsCurrentlyUsed() )
+	{
+		cout << "[CPerson]: WARNING application already used, cannot add it again!\n";
+		return FAIL;
+	}
+	else
+	{
+		a_pCApplication->setAsUsed();
+		m_PersonApplicationVector.push_back(a_pCApplication);
+		return SUCCESS;
+	}
+
 	//TODO sprawdzic czy zawodnik nie startuje dwa razy w tej samej konkurencji, moze zostal juz dodany wczesniej?
 }
 
+bool CPerson::removeApplication(CApplication * a_pCApplication)
+{
+	int iVecSize = m_PersonApplicationVector.size();
+
+	if( iVecSize > 0 )
+        {
+                for (int i = 0; i < iVecSize; i++)
+                {
+                        if ( m_PersonApplicationVector[i] == a_pCApplication )
+			{
+				m_PersonApplicationVector.erase(m_PersonApplicationVector.begin() + i);
+				a_pCApplication->setAsUsed();
+				cout << "[CPerson]: application removed from the vector" << endl;
+				return SUCCESS;
+			}
+                }
+        }
+        else
+        {
+                cout << "[CPerson]: WARNING applicatios card is empty, cannot remove anything .." << endl;
+		return FAIL;
+        }
+}
 
 /***** CONSTRUCTOR *****/
 

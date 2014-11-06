@@ -4,9 +4,16 @@
 #include <iostream>
 
 
-enum {
+enum
+{
 	WOMAN = 0,
 	MAN   = 1,
+};
+
+enum
+{
+        FAIL = 0,
+        SUCCESS = 1,
 };
 
 const std::string ksMen = "MEN";  
