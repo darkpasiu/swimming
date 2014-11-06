@@ -14,16 +14,12 @@ int main(){
 	CCompetition zawody3("100m stylem klasycznym", 0);
 	CCompetition zawody4("100m stylem dowolnym", 0);
 	
-	CPerson plywak1("swim1", "Kowalski1", 1988, 1, "UKL Osemka");
+	CPerson plywak1("Swimmer1", "Kowalski1", 1988, 1, "UKL Osemka");
 	plywak1.addApplication(&zawody1, "0:25,86");
-	//plywak1.removeApplication(0);
-
-	cout << "\n**********\n";
 	plywak1.printPersonInfo();
+	plywak1.removeApplication(0);
 	cout << "**********\n\n";
 
-	zawody1.printCompetitionInfo();
-	zawody2.printCompetitionInfo();
 
 	CTournament * p_CTournamentInstance = CTournament::getInstance();
         p_CTournamentInstance->printRegisteredPersons();

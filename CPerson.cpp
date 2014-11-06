@@ -49,15 +49,21 @@ bool CPerson::addApplication(CCompetition * a_pCCompetition, string a_szResult, 
 
 	m_PersonApplicationVector.push_back(pCApplication);
 
+	// register - inform CCompetition that it was choosen
+	a_pCCompetition->registerPerson(this);
+
 	return SUCCESS;
 }
 
 void CPerson::removeApplication(unsigned int a_uiIndex)
 {
 	cout << "\n[CPerson]: removeApplication(), removing application: " << a_uiIndex << endl;
+
+	// unregister - inform CCompetition that entry should be removed
+	m_PersonApplicationVector[a_uiIndex]->getCompetition()->unregisterPerson(this);
+
 	delete m_PersonApplicationVector[a_uiIndex];
-	m_PersonApplicationVector.erase(m_PersonApplicationVector.begin()+a_uiIndex);
-	cout << "\n[CPerson]: removeApplication() \n";
+	m_PersonApplicationVector.erase(m_PersonApplicationVector.begin() + a_uiIndex);
 }
 
 /***** CONSTRUCTOR *****/

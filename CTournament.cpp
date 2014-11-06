@@ -20,7 +20,7 @@ CTournament * CTournament::getInstance()
 void CTournament::registerPerson(CPerson * a_pCPerson)
 {
 	m_RegisteredPersonList.push_back(a_pCPerson);
-	cout << "[CTournament]: new person registered: " << a_pCPerson->getName() << endl;
+	cout << "[CTournament]: new person registered: "<< "" << a_pCPerson->getSurname() << endl;
 }
 
 void CTournament::registerCompetition(CCompetition * a_pCCompetition)
