@@ -22,7 +22,7 @@ void CApplication::printApplicationInfo()
 
 /***** CONSTRUCTOR *****/
 
-CApplication::CApplication(string a_szApplicationResult, unsigned int a_uiTrack, unsigned int a_uiSeries, CCompetition * a_pCCompetition, bool a_bIsCurrentlyUsed)
+CApplication::CApplication(string a_szApplicationResult, CCompetition * a_pCCompetition, unsigned int a_uiTrack, unsigned int a_uiSeries, bool a_bIsCurrentlyUsed)
 {
 	m_szApplicationResult = a_szApplicationResult;
 	m_uiTrack             = a_uiTrack;

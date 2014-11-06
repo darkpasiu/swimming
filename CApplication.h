@@ -24,7 +24,7 @@ class CApplication {
 	void printApplicationInfo();
 
 	/* CONSTRUCTOR */
-	CApplication(string a_szApplicationResult, unsigned int = 0, unsigned int = 0, CCompetition * = 0, bool = 0);
+	CApplication(string a_szApplicationResult, CCompetition * = 0, unsigned int = 0, unsigned int = 0, bool = 0);
 
 	/* SET */
 	void setApplicationResult(string);

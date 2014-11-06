@@ -70,6 +70,7 @@ bool CPerson::removeApplication(CApplication * a_pCApplication)
                 cout << "[CPerson]: WARNING applicatios card is empty, cannot remove anything .." << endl;
 		return FAIL;
         }
+	return FAIL;
 }
 
 /***** CONSTRUCTOR *****/

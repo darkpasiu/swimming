@@ -1,6 +1,7 @@
 // CTournament.cpp
-#include "CTournament.h"
+#include <regex>
 
+#include "CTournament.h"
 #include "CPerson.h"
 #include "CCompetition.h"
 
@@ -36,7 +37,8 @@ void CTournament::printRegisteredPersons()
 
 	for (it = m_RegisteredPersonList.begin(); it != m_RegisteredPersonList.end(); ++it)
 	{
-		cout << (*it)->getName() << " " << (*it)->getSurname()  << " " << (*it)->getClub() << " " << (*it)->getGender() << " " << (*it)->getYear() << endl;
+		cout << "--> " << (*it)->getName() << " " << (*it)->getSurname()  << " " << (*it)->getClub() << " " << (*it)->getGender() << " " << (*it)->getYear() << endl;
+		(*it)->printPersonInfo();
 	}
 }
 
