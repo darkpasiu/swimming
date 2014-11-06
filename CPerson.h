@@ -9,6 +9,7 @@ using namespace std;
 
 class CTournament;
 class CApplication;
+class CCompetition;
 
 class CPerson {
 	
@@ -28,11 +29,14 @@ class CPerson {
 
  	public:
 	void printPersonInfo();
-	bool addApplication(CApplication *);
-	bool removeApplication(CApplication *);
+	bool addApplication(CCompetition *, string, unsigned int = 0, unsigned int = 0, bool = 1);
+	void removeApplication(unsigned int);
 
 	/* CONSTRUCTOR */
 	CPerson(string, string, unsigned int, bool, string = "");
+
+	/* DESTRUCTOR */
+	~CPerson();
 
 	/* SET */
 	void setName(string);

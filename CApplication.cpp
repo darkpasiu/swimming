@@ -22,13 +22,20 @@ void CApplication::printApplicationInfo()
 
 /***** CONSTRUCTOR *****/
 
-CApplication::CApplication(string a_szApplicationResult, CCompetition * a_pCCompetition, unsigned int a_uiTrack, unsigned int a_uiSeries, bool a_bIsCurrentlyUsed)
+CApplication::CApplication(CCompetition * a_pCCompetition, string a_szApplicationResult, unsigned int a_uiTrack, unsigned int a_uiSeries, bool a_bIsCurrentlyUsed)
 {
 	m_szApplicationResult = a_szApplicationResult;
 	m_uiTrack             = a_uiTrack;
 	m_uiSeries            = a_uiSeries;
 	m_pCCompetition       = a_pCCompetition;
 	m_bIsCurrentlyUsed    = a_bIsCurrentlyUsed;
+}
+
+/***** DESTRUCTOR *****/
+
+CApplication::~CApplication()
+{
+	cout <<  "[CApplication]: destructor\n";
 }
 
 /***** SET *****/

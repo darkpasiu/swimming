@@ -1,6 +1,8 @@
 // CPerson.cpp
+#include <new>          	// std::bad_alloc
 #include "CPerson.h"
 #include "CTournament.h"
+#include "CCompetition.h"
 #include "CApplication.h"
 #include "define.h"
 
@@ -30,47 +32,32 @@ void CPerson::printPersonInfo()
 
 }
 
-bool CPerson::addApplication(CApplication * a_pCApplication)
+// allocate memory for new application and add it to vector
+bool CPerson::addApplication(CCompetition * a_pCCompetition, string a_szResult, unsigned int a_uiTrack, unsigned int a_uiSeries, bool a_bIsCurrentlyUsed)
 {
-	/* check if application is not already in use */
-	if ( a_pCApplication->getIsCurrentlyUsed() )
+	CApplication * pCApplication = 0;
+	try
 	{
-		cout << "[CPerson]: WARNING application already used, cannot add it again!\n";
+		pCApplication = new CApplication(a_pCCompetition, a_szResult, a_uiTrack, a_uiSeries, a_bIsCurrentlyUsed);
+		//TODO free the memory allocated here!
+	}
+	catch (std::bad_alloc& ba)
+	{
+		std::cerr << "[CPerson]: bad_alloc caught: " << ba.what() << '\n';
 		return FAIL;
 	}
-	else
-	{
-		a_pCApplication->setAsUsed();
-		m_PersonApplicationVector.push_back(a_pCApplication);
-		return SUCCESS;
-	}
 
-	//TODO sprawdzic czy zawodnik nie startuje dwa razy w tej samej konkurencji, moze zostal juz dodany wczesniej?
+	m_PersonApplicationVector.push_back(pCApplication);
+
+	return SUCCESS;
 }
 
-bool CPerson::removeApplication(CApplication * a_pCApplication)
+void CPerson::removeApplication(unsigned int a_uiIndex)
 {
-	int iVecSize = m_PersonApplicationVector.size();
-
-	if( iVecSize > 0 )
-        {
-                for (int i = 0; i < iVecSize; i++)
-                {
-                        if ( m_PersonApplicationVector[i] == a_pCApplication )
-			{
-				m_PersonApplicationVector.erase(m_PersonApplicationVector.begin() + i);
-				a_pCApplication->setAsUsed();
-				cout << "[CPerson]: application removed from the vector" << endl;
-				return SUCCESS;
-			}
-                }
-        }
-        else
-        {
-                cout << "[CPerson]: WARNING applicatios card is empty, cannot remove anything .." << endl;
-		return FAIL;
-        }
-	return FAIL;
+	cout << "\n[CPerson]: removeApplication(), removing application: " << a_uiIndex << endl;
+	delete m_PersonApplicationVector[a_uiIndex];
+	m_PersonApplicationVector.erase(m_PersonApplicationVector.begin()+a_uiIndex);
+	cout << "\n[CPerson]: removeApplication() \n";
 }
 
 /***** CONSTRUCTOR *****/
@@ -88,6 +75,18 @@ CPerson::CPerson(string a_szName, string a_szSurname, unsigned int a_uiYear, boo
 	p_CTournamentInstance->registerPerson(this);
 
 };
+
+/* DESTRUCTOR */
+CPerson::~CPerson()
+{
+	cout << "\n[CPerson]: destructor \n";
+	int iVecSize = m_PersonApplicationVector.size();
+
+	for (int i = 0; i < iVecSize; i++)
+	{
+		delete m_PersonApplicationVector[i];
+	}
+}
 
 /***** SET *****/
 
