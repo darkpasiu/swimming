@@ -1,13 +1,13 @@
-// CArrangement.h
-#ifndef PERSON
-#define PERSON
+// CStartingNote.h
+#ifndef STARTINGNOTE 
+#define STARTINGNOTE
 
 #include <iostream>
 
 using namespace std;
 
 
-class CArrangment
+class CStartingNote
 {
 	private:
 	string m_szApplicationResult;
@@ -30,10 +30,10 @@ class CArrangment
 	unsigned int & getSeries();
 
 	/* CONSTRUCTOR */
-	CArrangment(string, unsigned int = 0, unsigned int = 0);
+	CStartingNote(string, unsigned int = 0, unsigned int = 0);
 
 	/* DESTRUCTOR */
-	~CArrangment();
+	~CStartingNote();
 };
 
 
