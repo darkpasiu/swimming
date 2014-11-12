@@ -14,6 +14,7 @@ CRegistration::CRegistration(CPerson * a_pCPerson, CStartingNote * a_pCStartingN
 }
 
 /* SET */
+
 void CRegistration::setCPerson(CPerson * a_pCPerson)
 {
 	m_pCPerson = a_pCPerson;
@@ -25,3 +26,13 @@ void CRegistration::setCArrangment(CStartingNote * a_pCStartingNote)
 }
 
 /* GET */
+
+CPerson * CRegistration::getCPerson()
+{
+	return m_pCPerson;
+}
+
+CStartingNote * CRegistration::getCStartingNote()
+{
+	return m_pCStartingNote;
+}
