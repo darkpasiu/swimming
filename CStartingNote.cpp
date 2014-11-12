@@ -3,7 +3,7 @@
 
 using namespace std;
 
-/***** CONSTRUCTOR *****/
+/* CONSTRUCTOR */
 
 CStartingNote::CStartingNote(string a_szApplicationResult, unsigned int a_uiTrack, unsigned int a_uiSeries)
 {
@@ -12,14 +12,20 @@ CStartingNote::CStartingNote(string a_szApplicationResult, unsigned int a_uiTrac
 	m_uiSeries            = a_uiSeries;
 }
 
-/***** DESTRUCTOR *****/
+/* DESTRUCTOR */
 
 CStartingNote::~CStartingNote()
 {
 	cout <<  "[CStartingNote]: destructor\n";
 }
 
-/***** SET *****/
+
+void CStartingNote::printInfo()
+{
+	 cout << "[CStartingNote]: " << m_szApplicationResult << " " << m_uiTrack << " " << m_uiSeries << endl;
+}
+
+/* SET */
 
 void CStartingNote::setApplicationResult(string a_szApplicationResult)
 {
@@ -41,7 +47,7 @@ void CStartingNote::setSeries(unsigned int a_uiSeries)
 	m_uiSeries = a_uiSeries;
 }
 
-/***** GET *****/
+/* GET */
 
 string & CStartingNote::getApplicationResult()
 {

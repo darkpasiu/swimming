@@ -7,13 +7,13 @@ using namespace std;
 
 unsigned int CPerson::m_suiID = 0;
 
-void CPerson::printPersonInfo()
+void CPerson::printInfo()
 {
-	cout << "[CPerson]: " << "[" << m_uiPersonID << "]" << " " << m_szName << " " << m_szSurname << " " << m_szClub << " " << m_bGender << " " << m_uiYear ; 
+	cout << "[CPerson]: " << "[" << m_uiPersonID << "]" << " " << m_szName << " " << m_szSurname << " " << m_szClub << " " << m_bGender << " " << m_uiYear << endl; 
 
 }
 
-/***** CONSTRUCTOR *****/
+/* CONSTRUCTOR */
 
 CPerson::CPerson(string a_szName, string a_szSurname, unsigned int a_uiYear, bool a_bGender, string a_szClub)
 {
@@ -31,7 +31,7 @@ CPerson::~CPerson()
 	cout << "\n[CPerson]: destructor \n";
 }
 
-/***** SET *****/
+/* SET */
 
 void CPerson::setName(string a_szName)
 {
@@ -58,7 +58,7 @@ void CPerson::setGender(bool a_bGender)
         m_bGender = a_bGender;
 };
 
-/***** GET *****/
+/* GET */
 
 string & CPerson::getName()
 { 

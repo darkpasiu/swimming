@@ -1,0 +1,1 @@
+// CCompetition.cpp

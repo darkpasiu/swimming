@@ -17,6 +17,8 @@ class CStartingNote
 	unsigned int m_uiSeries;
 
 	public:
+	void printInfo();
+
 	/* SET */
 	void setApplicationResult(string);
 	void setFinalResult(string);

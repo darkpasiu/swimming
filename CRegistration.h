@@ -16,7 +16,7 @@ class CRegistration {
 	CStartingNote * m_pCStartingNote;
 
 	public:
-	void printRegistrationInfo();
+	void printInfo();
 
 	/* CONSTRUCTOR */
 	CRegistration(CPerson *, CStartingNote *); 

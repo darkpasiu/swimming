@@ -5,7 +5,15 @@
 
 using namespace std;
 
-/***** CONSTRUCTOR *****/
+void CRegistration::printInfo()
+{
+	cout << "[CPerson]: ";
+	m_pCPerson->printInfo();
+	cout << "[CPerson]: ";
+	m_pCStartingNote->printInfo();
+}
+
+/* CONSTRUCTOR */
 
 CRegistration::CRegistration(CPerson * a_pCPerson, CStartingNote * a_pCStartingNote)
 {

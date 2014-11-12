@@ -19,11 +19,8 @@ class CPerson {
 	
 	static unsigned int m_suiID;
 
-	/* PRIVATE DEFAULT CONSTRUCTOR */
-	CPerson();
- 	
 	public:
-	void printPersonInfo();
+	void printInfo();
 
 	/* CONSTRUCTOR */
 	CPerson(string, string, unsigned int, bool = MAN, string = "");
