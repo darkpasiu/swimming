@@ -3,13 +3,9 @@
 #define PERSON
 
 #include <iostream>
-#include <vector>
+#include "define.h"
 
 using namespace std;
-
-class CTournament;
-class CApplication;
-class CCompetition;
 
 class CPerson {
 	
@@ -20,20 +16,17 @@ class CPerson {
 	bool m_bGender;
 	unsigned int m_uiYear;
 	unsigned int m_uiPersonID;
-
-	vector<CApplication *> m_PersonApplicationVector;
-
-	CTournament * p_CTournamentInstance;
 	
 	static unsigned int m_suiID;
 
- 	public:
+	/* PRIVATE DEFAULT CONSTRUCTOR */
+	CPerson();
+ 	
+	public:
 	void printPersonInfo();
-	bool addApplication(CCompetition *, string, unsigned int = 0, unsigned int = 0, bool = 1);
-	void removeApplication(unsigned int);
 
 	/* CONSTRUCTOR */
-	CPerson(string, string, unsigned int, bool, string = "");
+	CPerson(string, string, unsigned int, bool = MAN, string = "");
 
 	/* DESTRUCTOR */
 	~CPerson();
@@ -55,3 +48,4 @@ class CPerson {
 
 
 #endif
+

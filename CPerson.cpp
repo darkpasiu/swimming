@@ -1,9 +1,6 @@
 // CPerson.cpp
 #include <new>          	// std::bad_alloc
 #include "CPerson.h"
-#include "CTournament.h"
-#include "CCompetition.h"
-#include "CApplication.h"
 #include "define.h"
 
 using namespace std;
@@ -14,61 +11,11 @@ void CPerson::printPersonInfo()
 {
 	cout << "[CPerson]: " << "[" << m_uiPersonID << "]" << " " << m_szName << " " << m_szSurname << " " << m_szClub << " " << m_bGender << " " << m_uiYear ; 
 
-	int iVecSize = m_PersonApplicationVector.size();
-
-	if( iVecSize > 0 )
-	{
-		cout << "" << endl;
-		for (int i = 0; i < iVecSize; i++)
-		{
-			m_PersonApplicationVector[i]->printApplicationInfo();
-		}
-		cout << "\n";
-	}
-	else
-	{
-		cout << " application card is empty" << endl;
-	}
-
-}
-
-// allocate memory for new application and add it to vector
-bool CPerson::addApplication(CCompetition * a_pCCompetition, string a_szResult, unsigned int a_uiTrack, unsigned int a_uiSeries, bool a_bIsCurrentlyUsed)
-{
-	CApplication * pCApplication = 0;
-	try
-	{
-		pCApplication = new CApplication(a_pCCompetition, a_szResult, a_uiTrack, a_uiSeries, a_bIsCurrentlyUsed);
-	}
-	catch (std::bad_alloc& ba)
-	{
-		std::cerr << "[CPerson]: bad_alloc caught: " << ba.what() << '\n';
-		return FAIL;
-	}
-
-	m_PersonApplicationVector.push_back(pCApplication);
-
-	// register - inform CCompetition that it was choosen
-	a_pCCompetition->registerPerson(this);
-
-	return SUCCESS;
-}
-
-void CPerson::removeApplication(unsigned int a_uiIndex)
-{
-	cout << "\n[CPerson]: removeApplication(), removing application: " << a_uiIndex << endl;
-
-	// unregister - inform CCompetition that entry should be removed
-	m_PersonApplicationVector[a_uiIndex]->getCompetition()->unregisterPerson(this);
-
-	// free the memory allocated in addApplication
-	delete m_PersonApplicationVector[a_uiIndex];
-	m_PersonApplicationVector.erase(m_PersonApplicationVector.begin() + a_uiIndex);
 }
 
 /***** CONSTRUCTOR *****/
 
-CPerson::CPerson(string a_szName, string a_szSurname, unsigned int a_uiYear, bool a_bGender=MAN, string a_szClub)
+CPerson::CPerson(string a_szName, string a_szSurname, unsigned int a_uiYear, bool a_bGender, string a_szClub)
 {
 	m_uiPersonID = m_suiID++;
 	m_szName     = a_szName,
@@ -76,22 +23,12 @@ CPerson::CPerson(string a_szName, string a_szSurname, unsigned int a_uiYear, boo
 	m_uiYear     = a_uiYear,
 	m_bGender    = a_bGender,
 	m_szClub     = a_szClub;
-
-	p_CTournamentInstance = CTournament::getInstance();
-	p_CTournamentInstance->registerPerson(this);
-
 };
 
 /* DESTRUCTOR */
 CPerson::~CPerson()
 {
 	cout << "\n[CPerson]: destructor \n";
-	int iVecSize = m_PersonApplicationVector.size();
-
-	for (int i = 0; i < iVecSize; i++)
-	{
-		delete m_PersonApplicationVector[i];
-	}
 }
 
 /***** SET *****/
