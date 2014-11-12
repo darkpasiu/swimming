@@ -5,7 +5,7 @@
 # $* - oznacza odwołanie do dopasowanego wzorca (najczęściej w regułach wzorców o których możesz przeczytać nieco dalej)
 
 CC = g++
-CFLAGS = -Wall -O2 -std=c++11
+CFLAGS = -Wall -O2 -std=c++0x
 LDLIBS = -lpthread
 
 SRCS = $(wildcard *.cpp)

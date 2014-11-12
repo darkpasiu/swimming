@@ -39,7 +39,6 @@ bool CPerson::addApplication(CCompetition * a_pCCompetition, string a_szResult, 
 	try
 	{
 		pCApplication = new CApplication(a_pCCompetition, a_szResult, a_uiTrack, a_uiSeries, a_bIsCurrentlyUsed);
-		//TODO free the memory allocated here!
 	}
 	catch (std::bad_alloc& ba)
 	{
@@ -62,6 +61,7 @@ void CPerson::removeApplication(unsigned int a_uiIndex)
 	// unregister - inform CCompetition that entry should be removed
 	m_PersonApplicationVector[a_uiIndex]->getCompetition()->unregisterPerson(this);
 
+	// free the memory allocated in addApplication
 	delete m_PersonApplicationVector[a_uiIndex];
 	m_PersonApplicationVector.erase(m_PersonApplicationVector.begin() + a_uiIndex);
 }
