@@ -4,27 +4,32 @@
 # $^ - oznacza wszystkie bieżące zależności (ze spacjami pomiędzy nimi)
 # $* - oznacza odwołanie do dopasowanego wzorca (najczęściej w regułach wzorców o których możesz przeczytać nieco dalej)
 
+# compiler
 CC = g++
 CFLAGS = -Wall -O2 
+
+# libraries
 LDLIBS = 
 
-SRCS = $(wildcard *.cpp)
-OBJS = $(patsubst %.cpp,%.o,$(SRCS))
+# files and folders
+SRCDIR = src
+OUTDIR = out
+SRCS   = $(wildcard $(SRCDIR)/*.cpp)
+OBJS   = $(patsubst $(SRCDIR)/%.cpp,$(OUTDIR)/%.o,$(SRCS))
 
 EXE = bin
 
-
-all: clean $(EXE)
-
-%.o: %.cpp
-	$(CC) -c $(CFLAGS) $(DEBUGFLAG) $< -o $@
+# targets
+all: clean create_outdir $(EXE)
 
 $(EXE): $(OBJS) 
 	$(CC) $(CFLAGS) $^ -o $@ $(LDLIBS) 
 
+$(OUTDIR)/%.o: $(SRCDIR)/%.cpp
+	$(CC) -c $(CFLAGS) $(DEBUGFLAG) $< -o $@
 
-.PHONY: list clear_screen clean 
 
+.PHONY: list clear_screen clean create_outdir 
 list:
 	@echo $(SRCS)
 	@echo $(OBJS)
@@ -32,5 +37,9 @@ list:
 clean:
 	@echo
 	@echo cleaning 
-	rm -f *.o $(EXE) 
+	rm -f $(OUTDIR)/*.o $(EXE)
+	rm -rf $(OUTDIR)
 	@echo
+
+create_outdir:
+	mkdir -p $(OUTDIR)
