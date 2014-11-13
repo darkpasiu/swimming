@@ -23,7 +23,7 @@ class CCompetition {
 	void removeRegistration(CRegistration *);
 
 	/* CONSTRUCTOR */
-	CCompetition(string);
+	CCompetition(string, bool);
 
 	/* SET */
 	void setCompetition(string);

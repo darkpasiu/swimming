@@ -1,6 +1,6 @@
 // CRegistration.h
-#ifndef COMPETITION 
-#define COMPETITION
+#ifndef REGISTRATION 
+#define REGISTRATION
 
 #include <iostream>
 

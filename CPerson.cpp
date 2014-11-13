@@ -1,7 +1,6 @@
 // CPerson.cpp
 #include <new>          	// std::bad_alloc
 #include "CPerson.h"
-#include "define.h"
 
 using namespace std;
 

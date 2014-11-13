@@ -4,6 +4,7 @@
 #include "CStartingNote.h"
 #include "CRegistration.h"
 #include "define.h"
+#include "CCompetition.h"
 
 using namespace std;
 
@@ -13,6 +14,7 @@ int main()
 	CPerson * p_CPerson1 = new CPerson("Swimmer1", "Kowalski1", 1988, MAN, "UKL Osemka");
 	CStartingNote * p_CStartingNote1 = new CStartingNote("00:12,87");
 	CRegistration * p_CRegistration1 = new CRegistration(p_CPerson1, p_CStartingNote1);
+	CCompetition * p_CCompetition = new CCompetition("50m stylem dowolnym", MAN);
 
 	p_CPerson1->printInfo();
 	p_CStartingNote1->printInfo();
