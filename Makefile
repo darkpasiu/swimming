@@ -20,7 +20,7 @@ OBJS   = $(patsubst $(SRCDIR)/%.cpp,$(OUTDIR)/%.o,$(SRCS))
 EXE = bin
 
 # targets
-all: clean create_outdir $(EXE)
+all: create_outdir $(EXE)
 
 $(EXE): $(OBJS) 
 	$(CC) $(CFLAGS) $^ -o $@ $(LDLIBS) 

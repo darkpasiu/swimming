@@ -2,20 +2,36 @@
 #include "CCompetition.h"
 #include "define.h"
 
+/* needed by printInfo() */
+#include "CRegistration.h"
+
 using namespace std;
 
 /* CONSTRUCTOR */
+
 CCompetition::CCompetition(string a_szCompetition, bool a_bGender)
 {
 	m_szCompetition = a_szCompetition;
 	m_bGender = a_bGender;
 }
 
-
 void CCompetition::printInfo()
 {
 	cout << "[CCompetition]: " << m_szCompetition << " ";
 	(m_bGender) ? (cout << ksMen << endl) : ( cout << ksWomen << endl );
+
+	int iVecSize = m_RegisteredVector.size();
+	if ( iVecSize > 0 )
+	{
+		for (int i = 0; i < iVecSize; i++)
+		{
+			m_RegisteredVector[i]->printInfo();
+		}
+	}
+	else
+	{
+		cout << "[CCompetition]: zero registered users found" << endl;
+	}
 }
 
 void CCompetition::addRegistration(CRegistration * a_pCRegistration)
