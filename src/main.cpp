@@ -45,8 +45,8 @@ int main()
 	p_CCompetition1->addRegistration(p_CRegistration5);
 	p_CCompetition1->addRegistration(p_CRegistration6);
 
-	p_CStartingNote6->convertTimeToInt(p_CStartingNote6->getApplicationResult());
-
+	p_CStartingNote6->convertApplicationTimeToInt();
+	p_CCompetition1->sortVectorAscending(p_CRegistration6, p_CRegistration6);
 
 	CTournament * p_CTournament = CTournament::getInstance();
 	p_CTournament->registerCompetition(p_CCompetition1);

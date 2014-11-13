@@ -2,6 +2,9 @@
 #include "CCompetition.h"
 #include "define.h"
 
+/* needed by sortVectorAscending */
+#include "CStartingNote.h"
+
 /* needed by t CRegistration * p_lCRegistrationort() */
 #include <algorithm>
 
@@ -63,9 +66,9 @@ void CCompetition::removeRegistration(CRegistration * a_pCRegistration)
 	}
 }
 
-void CCompetition::sortVectorAscending(const CRegistration * p_lCRegistration, const CRegistration * p_rCRegistration)
+void CCompetition::sortVectorAscending(CRegistration * p_lCRegistration, CRegistration * p_rCRegistration)
 {
-	
+	cout << p_lCRegistration->getCStartingNote()->convertApplicationTimeToInt() << " --\n";
 }
 
 /* SET */

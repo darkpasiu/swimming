@@ -22,15 +22,16 @@ CStartingNote::~CStartingNote()
 	cout <<  "[CStartingNote]: destructor\n";
 }
 
-
-unsigned int CStartingNote::convertTimeToInt(string a_szTime)
+//TODO application result - zmienic nazwe na application time
+unsigned int CStartingNote::convertApplicationTimeToInt()
 {
+	string szTmp = m_szApplicationResult;
 	// remove ":" from string: 00:21,23 -> 0021,23
-	string tmp = a_szTime.erase(a_szTime.find(':'),1);
+	szTmp = szTmp.erase(szTmp.find(':'),1);
 	// remove "," from string: 00:21,23 -> 002123
-	tmp = tmp.erase(a_szTime.find(','),1);
+	szTmp = szTmp.erase(szTmp.find(','),1);
 	// convert string to int, remove spaces in front: 002123 -> 2123
-	return  atoi( tmp.c_str() );
+	return  atoi( szTmp.c_str() );
 }
 
 void CStartingNote::printInfo()

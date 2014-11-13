@@ -22,7 +22,7 @@ class CCompetition {
 	void addRegistration(CRegistration *);
 	void removeRegistration(CRegistration *);
 
-	void sortVectorAscending(const CRegistration *, const CRegistration *);
+	void sortVectorAscending(CRegistration *, CRegistration *);
 
 	/* CONSTRUCTOR */
 	CCompetition(string, bool);

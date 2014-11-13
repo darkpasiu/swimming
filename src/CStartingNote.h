@@ -18,7 +18,7 @@ class CStartingNote
 
 	public:
 	void printInfo();
-	unsigned int convertTimeToInt(string);
+	unsigned int convertApplicationTimeToInt();
 
 	/* SET */
 	void setApplicationResult(string);
