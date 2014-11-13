@@ -1,6 +1,9 @@
 // CStartingNote.cpp
 #include "CStartingNote.h"
 
+// atoi
+#include <stdlib.h>
+
 using namespace std;
 
 /* CONSTRUCTOR */
@@ -19,6 +22,16 @@ CStartingNote::~CStartingNote()
 	cout <<  "[CStartingNote]: destructor\n";
 }
 
+
+unsigned int CStartingNote::convertTimeToInt(string a_szTime)
+{
+	// remove ":" from string: 00:21,23 -> 0021,23
+	string tmp = a_szTime.erase(a_szTime.find(':'),1);
+	// remove "," from string: 00:21,23 -> 002123
+	tmp = tmp.erase(a_szTime.find(','),1);
+	// convert string to int, remove spaces in front: 002123 -> 2123
+	return  atoi( tmp.c_str() );
+}
 
 void CStartingNote::printInfo()
 {

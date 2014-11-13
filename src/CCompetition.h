@@ -22,6 +22,8 @@ class CCompetition {
 	void addRegistration(CRegistration *);
 	void removeRegistration(CRegistration *);
 
+	void sortVectorAscending(const CRegistration *, const CRegistration *);
+
 	/* CONSTRUCTOR */
 	CCompetition(string, bool);
 

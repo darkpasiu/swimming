@@ -2,6 +2,9 @@
 #include "CCompetition.h"
 #include "define.h"
 
+/* needed by t CRegistration * p_lCRegistrationort() */
+#include <algorithm>
+
 /* needed by printInfo() */
 #include "CRegistration.h"
 
@@ -58,6 +61,11 @@ void CCompetition::removeRegistration(CRegistration * a_pCRegistration)
 	{
 		cout << "[CCompetition]: could not remove registration " << endl;
 	}
+}
+
+void CCompetition::sortVectorAscending(const CRegistration * p_lCRegistration, const CRegistration * p_rCRegistration)
+{
+	
 }
 
 /* SET */
