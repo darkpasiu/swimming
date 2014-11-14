@@ -66,13 +66,27 @@ void CCompetition::removeRegistration(CRegistration * a_pCRegistration)
 	}
 }
 
+void CCompetition::assignLine()
+{
+
+	int iVecSize = m_RegisteredVector.size();
+	if( iVecSize > 0 )
+	{
+		for (int i = 0, series = 0; i < iVecSize; i++)
+		{
+			if ( i % 6 == 0 ) series++;
+			cout << i << "th:\ts. " << series << "\tl. " << (i % 6) + 1 << endl;
+		}
+	}
+}
+
 bool sortVectorAscending(CRegistration * a_plCRegistration, CRegistration * a_prCRegistration)
 {
 	unsigned int uiLtime = 0, uiRtime = 0;
 	uiLtime = a_plCRegistration->getCStartingNote()->convertApplicationTimeToInt();
 	uiRtime = a_prCRegistration->getCStartingNote()->convertApplicationTimeToInt();
 
-	cout << uiLtime << " " << uiRtime << endl;
+	//cout << uiLtime << " " << uiRtime << endl;
 
 	return uiLtime < uiRtime;
 }
@@ -83,7 +97,7 @@ bool sortVectorDescending(CRegistration * a_plCRegistration, CRegistration * a_p
 	uiLtime = a_plCRegistration->getCStartingNote()->convertApplicationTimeToInt();
 	uiRtime = a_prCRegistration->getCStartingNote()->convertApplicationTimeToInt();
 
-	cout << uiLtime << " " << uiRtime << endl;
+	//cout << uiLtime << " " << uiRtime << endl;
 
 	return uiLtime > uiRtime;
 }

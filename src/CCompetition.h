@@ -23,6 +23,7 @@ class CCompetition {
 	void printInfo();
 	void addRegistration(CRegistration *);
 	void removeRegistration(CRegistration *);
+	void assignLine();
 
 	void doTheSorting(bool);
 

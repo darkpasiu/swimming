@@ -24,13 +24,10 @@ int main()
     std::mt19937 mt(rd());
     std::uniform_int_distribution<int> dist(0, 9);
 
-	const unsigned int  cuiSwimmersNumber  = 18;
+	const unsigned int  cuiSwimmersNumber  = 22;
 
 	CCompetition * p_CCompetition1 = new CCompetition("50m stylem dowolnym", MAN);	
 
-
-    for (int i=0; i<16; ++i)
-        std::cout << dist(mt) << "\n";
 
 	for (unsigned int i = 0; i < cuiSwimmersNumber; i++)
 	{
@@ -51,8 +48,10 @@ int main()
 //	p_CRegistration1->printInfo();
 	p_CCompetition1->printInfo();
 
-	p_CCompetition1->doTheSorting(DESCENDING);
+	p_CCompetition1->doTheSorting(ASCENDING);
 
 	p_CCompetition1->printInfo();
+	p_CCompetition1->assignLine();
+
 	return 0;
 }

@@ -2,8 +2,8 @@
 +----------------+          +----------------+          +----------------+          +----------------+
 |  zawody        |          |   konkurencja  |          |   zgloszenie   |          |   zawodnik     |
 |----------------|          |----------------|          |----------------|          |----------------|
-| lista konkuren.|          | nazwa          |          |    zawodnik *  | <--------| imie           |
-| lista zawodnik.| <--------| plec           | <--------|    czas *      | <---+    | naziwsko       |
+| lista konkuren.|          | nazwa          |          |    zawodnik *  | <------- | imie           |
+| lista zawodnik.| <------- | plec           | <------- |    czas *      | <---+    | naziwsko       |
 | singleton inst.|          | wektor zgloszen|          |                |     |    | data urodzenia |
 |                |          |                |          |                |     |    | klub           |
 |                |          |                |          |                |     |    | plec           |
@@ -12,7 +12,7 @@
                                                                                |
                                                                                |    +----------------+
                                                                                |    | CStartingNote  |
-                                                                               +----|----------------|
+                                                                               +--- |----------------|
                                                                                     | czas wpisany   |
                                                                                     | czas uzyskany  |
                                                                                     | tor            |
