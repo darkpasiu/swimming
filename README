@@ -2,13 +2,13 @@
 +----------------+          +----------------+          +----------------+          +----------------+
 |  zawody        |          |   konkurencja  |          |   zgloszenie   |          |   zawodnik     |
 |----------------|          |----------------|          |----------------|          |----------------|
-| lista konkuren |          | lista zgloszen |          |  * zawodnik    | <--------| imie           |
-|                | <--------|                | <--------|  * czas        | <---+    | naziwsko       |
-|                |          |                |          |                |     |    | data urodzenia |
+| lista konkuren.|          | nazwa          |          |    zawodnik *  | <--------| imie           |
+| lista zawodnik.| <--------| plec           | <--------|    czas *      | <---+    | naziwsko       |
+| singleton inst.|          | wektor zgloszen|          |                |     |    | data urodzenia |
 |                |          |                |          |                |     |    | klub           |
 |                |          |                |          |                |     |    | plec           |
-|                |          |                |          |                |     |    +----------------+
-+----------------+          +----------------+          +----------------+     |
+|                |          |                |          |                |     |    | id             |
++----------------+          +----------------+          +----------------+     |    +----------------+
                                                                                |
                                                                                |    +----------------+
                                                                                |    | CStartingNote  |
