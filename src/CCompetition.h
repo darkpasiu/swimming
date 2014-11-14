@@ -5,6 +5,8 @@
 #include <iostream>
 #include <vector>
 
+#include "define.h"
+
 using namespace std;
 
 /* forward declaration */
@@ -22,7 +24,7 @@ class CCompetition {
 	void addRegistration(CRegistration *);
 	void removeRegistration(CRegistration *);
 
-	void sortVectorAscending(CRegistration *, CRegistration *);
+	void doTheSorting(bool);
 
 	/* CONSTRUCTOR */
 	CCompetition(string, bool);
@@ -35,5 +37,11 @@ class CCompetition {
 	string & getName();
 	bool & getGender();
 };
+
+// function used by std::sort --> doTheSorting(), sort ascending
+bool sortVectorAscending(CRegistration *, CRegistration *);
+
+// function used by std::sort --> doTheSorting(), sort descending
+bool sortVectorDescending(CRegistration *, CRegistration *);
 
 #endif

@@ -1,20 +1,20 @@
- CTournament                  CCompetition               CRegistration                  CPerson
-+----------------+			+----------------+			+----------------+          +----------------+
-|  zawody        |			|   konkurencja  |			|   zgloszenie   |          |   zawodnik     |
-|----------------|			|----------------|			|----------------|          |----------------|
-| lista konkuren |			| lista zgloszen |			|  * zawodnik	 | <--------| imie           |
-|                | <--------|                | <--------|  * czas		 | <---+    | naziwsko       |
-|                |			|				 |			|				 |     |    | data urodzenia |
-|                |			|                |			|				 |	   |    | klub           |
-|                |			|                |			|				 |     |    | plec           |
-|                |			|                |			|				 |     |    +----------------+
-+----------------+			+----------------+			+----------------+     | 
-                                                                               |  
+ CTournament                   CCompetition                CRegistration                  CPerson
++----------------+          +----------------+          +----------------+          +----------------+
+|  zawody        |          |   konkurencja  |          |   zgloszenie   |          |   zawodnik     |
+|----------------|          |----------------|          |----------------|          |----------------|
+| lista konkuren |          | lista zgloszen |          |  * zawodnik    | <--------| imie           |
+|                | <--------|                | <--------|  * czas        | <---+    | naziwsko       |
+|                |          |                |          |                |     |    | data urodzenia |
+|                |          |                |          |                |     |    | klub           |
+|                |          |                |          |                |     |    | plec           |
+|                |          |                |          |                |     |    +----------------+
++----------------+          +----------------+          +----------------+     |
+                                                                               |
                                                                                |    +----------------+
                                                                                |    | CStartingNote  |
                                                                                +----|----------------|
                                                                                     | czas wpisany   |
-																				    | czas uzyskany  |
+                                                                                    | czas uzyskany  |
                                                                                     | tor            |
                                                                                     | seria          |
                                                                                     +----------------+

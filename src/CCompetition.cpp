@@ -66,9 +66,38 @@ void CCompetition::removeRegistration(CRegistration * a_pCRegistration)
 	}
 }
 
-void CCompetition::sortVectorAscending(CRegistration * p_lCRegistration, CRegistration * p_rCRegistration)
+bool sortVectorAscending(CRegistration * a_plCRegistration, CRegistration * a_prCRegistration)
 {
-	cout << p_lCRegistration->getCStartingNote()->convertApplicationTimeToInt() << " --\n";
+	unsigned int uiLtime = 0, uiRtime = 0;
+	uiLtime = a_plCRegistration->getCStartingNote()->convertApplicationTimeToInt();
+	uiRtime = a_prCRegistration->getCStartingNote()->convertApplicationTimeToInt();
+
+	cout << uiLtime << " " << uiRtime << endl;
+
+	return uiLtime < uiRtime;
+}
+
+bool sortVectorDescending(CRegistration * a_plCRegistration, CRegistration * a_prCRegistration)
+{
+	unsigned int uiLtime = 0, uiRtime = 0;
+	uiLtime = a_plCRegistration->getCStartingNote()->convertApplicationTimeToInt();
+	uiRtime = a_prCRegistration->getCStartingNote()->convertApplicationTimeToInt();
+
+	cout << uiLtime << " " << uiRtime << endl;
+
+	return uiLtime > uiRtime;
+}
+
+void CCompetition::doTheSorting(bool a_bSortingType)
+{
+	if ( a_bSortingType == ASCENDING  )
+	{
+		std::sort(m_RegisteredVector.begin(), m_RegisteredVector.end(), sortVectorAscending);
+	}
+	else if ( a_bSortingType == DESCENDING  )
+	{
+		std::sort(m_RegisteredVector.begin(), m_RegisteredVector.end(), sortVectorDescending);
+	}
 }
 
 /* SET */

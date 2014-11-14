@@ -12,8 +12,14 @@ enum
 
 enum
 {
-        FAIL = 0,
-        SUCCESS = 1,
+	FAIL    = 0,
+	SUCCESS = 1,
+};
+
+enum
+{
+	DESCENDING = 0,
+	ASCENDING  = 1,
 };
 
 const std::string ksMen = "MEN";  
