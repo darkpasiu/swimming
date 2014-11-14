@@ -88,6 +88,7 @@ bool sortVectorDescending(CRegistration * a_plCRegistration, CRegistration * a_p
 	return uiLtime > uiRtime;
 }
 
+// sort the vector, select sorting method by bool parameter
 void CCompetition::doTheSorting(bool a_bSortingType)
 {
 	if ( a_bSortingType == ASCENDING  )

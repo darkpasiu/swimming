@@ -6,7 +6,7 @@
 
 # compiler
 CC = g++
-CFLAGS = -Wall -O2 
+CFLAGS = -Wall -O2 -std=c++0x
 
 # libraries
 LDLIBS = 
