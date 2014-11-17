@@ -18,3 +18,8 @@
                                                                                     | tor            |
                                                                                     | seria          |
                                                                                     +----------------+
+
+//TODO:
+- CCompetition: add sorting accorditn to tables kuitbl_schemeX
+- add lines and series info in CStartingNote --> use sorting results
+- add random sorting
