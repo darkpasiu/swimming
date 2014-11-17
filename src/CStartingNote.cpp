@@ -36,7 +36,7 @@ unsigned int CStartingNote::convertApplicationTimeToInt()
 
 void CStartingNote::printInfo()
 {
-	 cout << "[CStartingNote]: " << m_szApplicationResult << " " << m_uiTrack << " " << m_uiSeries << endl;
+	 cout << "[CStartingNote]: " << m_szApplicationResult << " " << m_uiSeries << " " << m_uiTrack << endl;
 }
 
 /* SET */

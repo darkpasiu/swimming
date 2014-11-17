@@ -46,12 +46,15 @@ int main()
 //	p_CPerson1->printInfo();
 //	p_CStartingNote1->printInfo();
 //	p_CRegistration1->printInfo();
-	p_CCompetition1->printInfo();
+//	p_CCompetition1->printInfo();
 
 	p_CCompetition1->doTheSorting(ASCENDING);
 
 	p_CCompetition1->printInfo();
+
 	p_CCompetition1->assignLine();
+
+	p_CCompetition1->printInfo();
 
 	return 0;
 }

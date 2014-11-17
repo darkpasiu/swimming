@@ -80,6 +80,9 @@ void CCompetition::assignLine()
 				cout << endl;
 			}
 			cout << i << "th:\ts. " << series << "\tl. " << (i % 6) + 1 << endl;
+			cout << i << "th:\ts. " << series << "\tl. " << kuitbl_scheme3[i % 6]  << endl;
+			m_RegisteredVector[i]->getCStartingNote()->setTrack(kuitbl_scheme3[i % 6]);
+			m_RegisteredVector[i]->getCStartingNote()->setSeries(series);
 		}
 	}
 }
