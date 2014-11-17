@@ -19,6 +19,10 @@ class CCompetition {
 	bool m_bGender;
 	vector<CRegistration *> m_RegisteredVector;
 
+	const unsigned int uitbl_scheme1[kiLineNumber6] = {1, 2, 3, 4, 5, 6};
+	const unsigned int uitbl_scheme2[kiLineNumber6] = {6, 5, 4, 3, 2, 1};
+	const unsigned int uitbl_scheme3[kiLineNumber6] = {3, 4, 2, 5, 1, 6};
+
 	public:
 	void printInfo();
 	void addRegistration(CRegistration *);

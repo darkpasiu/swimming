@@ -74,7 +74,11 @@ void CCompetition::assignLine()
 	{
 		for (int i = 0, series = 0; i < iVecSize; i++)
 		{
-			if ( i % 6 == 0 ) series++;
+			if ( i % 6 == 0 )
+			{
+				series++;
+				cout << endl;
+			}
 			cout << i << "th:\ts. " << series << "\tl. " << (i % 6) + 1 << endl;
 		}
 	}

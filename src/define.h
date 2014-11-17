@@ -25,4 +25,7 @@ enum
 const std::string ksMen = "MEN";  
 const std::string ksWomen = "WOMEN";
 
+const int kiLineNumber6 = 6;
+const int kiLineNumber8 = 8;
+
 #endif
