@@ -23,3 +23,32 @@
 - CCompetition: add sorting accorditn to tables kuitbl_schemeX
 - add lines and series info in CStartingNote --> use sorting results
 - add random sorting
+
+--> change the whole structure to:
+                               CRegistration
++----------------+          +----------------+
+|                |          |   rejestracja  |
+|----------------|          |----------------|
+| vector CregMen | <------- | id_zawodnik    |
+| vector CregWom | <------- | id_konkurencja |
+| segreguj...    |          | id_zgloszenie  |
+|                |          |                | <-----------+
+|                |      +-->|                |             |
+|                |      |   |                |<-+          |
++----------------+      |   +----------------+  |          |
+      +-----------------+           +-----------+          |
+      |                             |                      |
+ CStartingNote                 CCompetition          CPerson
++----------------+          +----------------+       +----------------+
+|  zgloszenie    |          |   konkurencja  |       |   zawodnik     |
+|----------------|          |----------------|       |----------------|
+| id             |          | id             |       | imie           |
+| czas wpisany   |          | nazwa          |       | naziwsko       |
+| czas uzyskany  |          | plec           |       | data urodzenia |
+| tor            |          | kolejnosc konk.|       | klub           |
+| seria          |          |                |       | plec           |
+|                |          |                |       | id             |
++----------------+          +----------------+       +----------------+
+
+
+- vektory moga byc stworzone pod kazda konkurencje z osobna, co by ulatwic i usprawnic sortowanie, moze jeden wektor z wskaznikami do innych wektorow? kolejnosc w glownym wektorze swiadczy o kolejnosci rozstawienia konkurencji?, natomiast kolejnosc w wektorze podrzednym mowi o rozmieszczeniu zawodnikow
