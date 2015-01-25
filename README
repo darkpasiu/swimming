@@ -45,7 +45,7 @@
 | id             |          | id             |       | imie           |
 | czas wpisany   |          | nazwa          |       | naziwsko       |
 | czas uzyskany  |          | plec           |       | data urodzenia |
-| tor            |          | kolejnosc konk.|       | klub           |
+| tor            |          |                |       | klub           |
 | seria          |          |                |       | plec           |
 |                |          |                |       | id             |
 +----------------+          +----------------+       +----------------+

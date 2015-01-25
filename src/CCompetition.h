@@ -17,19 +17,13 @@ class CCompetition {
 	private:
 	string m_szCompetition;
 	bool m_bGender;
-	vector<CRegistration *> m_RegisteredVector;
+        unsigned int m_uiCompetitionID;
+ 
+	static unsigned int m_suiID;
 
-	const unsigned int kuitbl_scheme1[kiLineNumber6] = {1, 2, 3, 4, 5, 6};
-	const unsigned int kuitbl_scheme2[kiLineNumber6] = {6, 5, 4, 3, 2, 1};
-	const unsigned int kuitbl_scheme3[kiLineNumber6] = {3, 4, 2, 5, 1, 6};
 
 	public:
 	void printInfo();
-	void addRegistration(CRegistration *);
-	void removeRegistration(CRegistration *);
-	void assignLine();
-
-	void doTheSorting(bool);
 
 	/* CONSTRUCTOR */
 	CCompetition(string, bool);
@@ -42,11 +36,5 @@ class CCompetition {
 	string & getName();
 	bool & getGender();
 };
-
-// function used by std::sort --> doTheSorting(), sort ascending
-bool sortVectorAscending(CRegistration *, CRegistration *);
-
-// function used by std::sort --> doTheSorting(), sort descending
-bool sortVectorDescending(CRegistration *, CRegistration *);
 
 #endif

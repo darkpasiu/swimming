@@ -8,7 +8,7 @@ unsigned int CPerson::m_suiID = 0;
 
 void CPerson::printInfo()
 {
-	cout << "[CPerson]: " << "[" << m_uiPersonID << "]" << " " << m_szName << " " << m_szSurname << " " << m_szClub << " " << m_bGender << " " << m_uiYear << endl; 
+	cout << "[CPerson]: \t\t" << "[" << m_uiPersonID << "]" << " " << m_szName << " " << m_szSurname << " " << m_szClub << " " << m_bGender << " " << m_uiYear << endl; 
 
 }
 

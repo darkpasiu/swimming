@@ -1,11 +1,11 @@
 #include <iostream>
 
 #include "CPerson.h"
-#include "CStartingNote.h"
-#include "CRegistration.h"
-#include "define.h"
 #include "CCompetition.h"
-#include "CTournament.h"
+#include "CStartingNote.h"
+//#include "CRegistration.h"
+//#include "define.h"
+//#include "CTournament.h"
 
 #include <vector>
 #include <random>
@@ -15,6 +15,16 @@ using namespace std;
 int main()
 {
 
+	CPerson swimmer_0 = CPerson("name_0", "surname_0", 1988, MAN, "UKL Osemka");
+	swimmer_0.printInfo();
+	
+	CCompetition competition_0 = CCompetition("50m stylem dowolnym", MAN);
+	competition_0.printInfo();
+
+	CStartingNote startingNote_0 = CStartingNote("00:25,96");
+	startingNote_0.printInfo();
+
+/*
 	vector <CPerson *> vpCPerson;
 	vector <CStartingNote *> vpCStartingNote;
 	vector <CRegistration *> vpCRegistration;
@@ -55,6 +65,6 @@ int main()
 	p_CCompetition1->assignLine();
 
 	p_CCompetition1->printInfo();
-
+*/
 	return 0;
 }

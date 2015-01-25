@@ -6,10 +6,13 @@
 
 using namespace std;
 
+unsigned int CStartingNote::m_suiID = 0;
+
 /* CONSTRUCTOR */
 
 CStartingNote::CStartingNote(string a_szApplicationResult, unsigned int a_uiTrack, unsigned int a_uiSeries)
 {
+	m_uiStartingNoteID    = m_suiID++;
 	m_szApplicationResult = a_szApplicationResult;
 	m_uiTrack             = a_uiTrack;
 	m_uiSeries            = a_uiSeries;
@@ -36,7 +39,7 @@ unsigned int CStartingNote::convertApplicationTimeToInt()
 
 void CStartingNote::printInfo()
 {
-	 cout << "[CStartingNote]: " << m_szApplicationResult << " " << m_uiSeries << " " << m_uiTrack << endl;
+	 cout << "[CStartingNote]: \t" << "[" << m_uiStartingNoteID << "] " << m_szApplicationResult << " " << m_uiSeries << " " << m_uiTrack << endl;
 }
 
 /* SET */

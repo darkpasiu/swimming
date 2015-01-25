@@ -15,7 +15,9 @@ class CStartingNote
 	unsigned int m_uiCompetitionID;
 	unsigned int m_uiTrack;
 	unsigned int m_uiSeries;
+	unsigned int m_uiStartingNoteID;
 
+	static unsigned int m_suiID;
 	public:
 	void printInfo();
 	unsigned int convertApplicationTimeToInt();
