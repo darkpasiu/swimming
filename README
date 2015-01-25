@@ -32,9 +32,9 @@
 | vector CregMen | <------- | id_zawodnik    |
 | vector CregWom | <------- | id_konkurencja |
 | segreguj...    |          | id_zgloszenie  |
-|                |          |                | <-----------+
-|                |      +-->|                |             |
-|                |      |   |                |<-+          |
+| vector zawodni |          | * wsk_zawodnik | <-----------+
+| vector konkure |      +-->| * wsk_konkuren |             |
+| vector zglosze |      |   | * wsk_zgloszen |<-+          |
 +----------------+      |   +----------------+  |          |
       +-----------------+           +-----------+          |
       |                             |                      |
